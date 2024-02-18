@@ -52,5 +52,29 @@ for (const seat of seats) {
 
     const newGrandTotal = grandTotal + 550;
     grandTotalElement.innerText = newGrandTotal;
+
+    // =================================================================
   });
 }
+
+// =================================================================
+// const applyButton = document.getElementById("apply-button");
+// applyButton.addEventListener("click", function () {
+//   const couponFieldElement = document.getElementById("coupon-field");
+//   const couponField = couponFieldElement.value;
+
+//   if(couponField === 'NEW15'){
+
+//   }else{
+
+//   }
+// });
+// =================================================================
+
+const nextButton = document.getElementById("next-button");
+nextButton.addEventListener("click", function () {
+  hideElementById("header-section");
+  hideElementById("offers-section");
+  hideElementById("ticket");
+  showElementById("modal");
+});
