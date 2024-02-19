@@ -1,3 +1,5 @@
+let seatCount = 0;
+
 const seats = document.getElementsByClassName("seats");
 for (const seat of seats) {
   seat.addEventListener("click", function handleClick() {
@@ -5,13 +7,15 @@ for (const seat of seats) {
     seat.classList.add("bg-primary-color");
     seat.classList.add("text-white");
 
+    // =================================================================================
+
     // increase seat count
+    seatCount = seatCount + 1;
     const currentSeatElement = document.getElementById("current-seats");
-    const currentSeat = getTextElementValueById("current-seats");
-    currentSeatElement.innerText = currentSeat + 1;
+    currentSeatElement.innerText = seatCount;
 
     // remove default disabled attribute for 'apply' button while user select 4 seats
-    if (currentSeat >= 3) {
+    if (seatCount >= 4) {
       const applyButton = document.getElementById("apply-button");
       applyButton.removeAttribute("disabled");
     }
