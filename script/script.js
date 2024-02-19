@@ -1,8 +1,6 @@
 const seats = document.getElementsByClassName("seats");
-// console.log(seats);
-
 for (const seat of seats) {
-  seat.addEventListener("click", function () {
+  seat.addEventListener("click", function handleClick() {
     // set seat background color
     seat.classList.add("bg-primary-color");
     seat.classList.add("text-white");
@@ -11,6 +9,12 @@ for (const seat of seats) {
     const currentSeatElement = document.getElementById("current-seats");
     const currentSeat = getTextElementValueById("current-seats");
     currentSeatElement.innerText = currentSeat + 1;
+
+    // remove default disabled attribute for 'apply' button while user select 4 seats
+    if (currentSeat >= 3) {
+      const applyButton = document.getElementById("apply-button");
+      applyButton.removeAttribute("disabled");
+    }
 
     // decrease seat count
     const currentAvailableSeatsElement = document.getElementById(
@@ -41,6 +45,9 @@ for (const seat of seats) {
 
     seatContainer.appendChild(pContainer);
 
+    // remove function when click second time
+    seat.removeEventListener("click", handleClick);
+
     // =================================================================
 
     // total price
@@ -67,13 +74,6 @@ for (const seat of seats) {
 // end seat loop
 
 // =============================[COUPON]====================================
-
-// remove default disabled attribute for 'apply' button while user input
-const couponFieldElement = document.getElementById("coupon-field");
-couponFieldElement.addEventListener("keyup", function () {
-  const applyButton = document.getElementById("apply-button");
-  applyButton.removeAttribute("disabled");
-});
 
 // coupon validation
 const applyButton = document.getElementById("apply-button");

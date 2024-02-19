@@ -103,11 +103,10 @@
       </nav>
 
       <!-- banner -->
-      <div
-        class="flex justify-center items-center bg-[url(./images/banner.png)] bg-no-repeat bg-contain min-h-screen"
-      >
+      <div class="relative">
+        <img class="w-full" src="./images/banner.png" alt="" />
         <div
-          class="flex flex-col justify-center items-center text-center space-y-6"
+          class="absolute w-[700px] space-y-6 flex flex-col justify-center items-center top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-center"
         >
           <h1 class="font-extrabold text-6xl text-white">
             End-to-End Travel with
@@ -125,6 +124,33 @@
           </a>
         </div>
       </div>
+      <!-- <div
+        class="rounded-lg h-72 md:h-auto relative mx-3 md:mx-12 lg:mx-24 w-auto"
+      >
+        <img class="h-full" src="images/banner.png" alt="" />
+        <div
+          class="absolute w-64 md:w-[500px] lg:w-[680px] text-center top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-white"
+        >
+          <div
+            class="flex flex-col justify-center items-center text-center space-y-6"
+          >
+            <h1 class="font-extrabold text-6xl text-white">
+              End-to-End Travel with
+            </h1>
+            <h1 class="text-[#1DD100] font-extrabold text-6xl">Rf Paribahan</h1>
+            <p class="text-white text-lg">
+              Yes, you can run unit tests and view the results directly within
+              the app. <br />
+              The integrated testing features allow for a streamlined .
+            </p>
+            <a href="#ticket">
+              <button class="btn bg-[#1DD100] text-[#030712] border-none">
+                Buy Tickets
+              </button>
+            </a>
+          </div>
+        </div>
+      </div> -->
     </header>
 
     <!-- Best offers section -->
@@ -296,13 +322,14 @@
             </div>
             <!-- body (seats) -->
             <div class="mt-6 space-y-4">
-              <!-- first row -->
+              <!-- ======================================================================================= -->
+              <!-- row-1 -->
               <div class="flex justify-end">
                 <button class="btn px-8">
                   <img src="./images/wheel.svg" alt="" />
                 </button>
               </div>
-              <!-- second row -->
+              <!-- row-2 -->
               <div class="flex justify-between font-inter font-medium text-lg">
                 <div class="flex gap-5 items-center">
                   <p class="text-[#03071280]">A</p>
@@ -314,7 +341,7 @@
                   <button class="btn seats text-[#03071280] px-9">A4</button>
                 </div>
               </div>
-              <!-- third row -->
+              <!-- row-3 -->
               <div class="flex justify-between font-inter font-medium text-lg">
                 <div class="flex gap-5 items-center">
                   <p class="text-[#03071280]">B</p>
@@ -326,8 +353,114 @@
                   <button class="btn seats text-[#03071280] px-9">B4</button>
                 </div>
               </div>
+              <!-- row-4 -->
+              <div class="flex justify-between font-inter font-medium text-lg">
+                <div class="flex gap-5 items-center">
+                  <p class="text-[#03071280]">C</p>
+                  <button class="btn seats text-[#03071280] px-9">C1</button>
+                  <button class="btn seats text-[#03071280] px-9">C2</button>
+                </div>
+                <div class="flex gap-5 items-center">
+                  <button class="btn seats text-[#03071280] px-9">C3</button>
+                  <button class="btn seats text-[#03071280] px-9">C4</button>
+                </div>
+              </div>
+              <!-- row-5 -->
+              <div class="flex justify-between font-inter font-medium text-lg">
+                <div class="flex gap-5 items-center">
+                  <p class="text-[#03071280]">D</p>
+                  <button class="btn seats text-[#03071280] px-9">D1</button>
+                  <button class="btn seats text-[#03071280] px-9">D2</button>
+                </div>
+                <div class="flex gap-5 items-center">
+                  <button class="btn seats text-[#03071280] px-9">D3</button>
+                  <button class="btn seats text-[#03071280] px-9">D4</button>
+                </div>
+              </div>
+              <!-- row-6 -->
+              <div class="flex justify-between font-inter font-medium text-lg">
+                <div class="flex gap-5 items-center">
+                  <p class="text-[#03071280]">E</p>
+                  <button class="btn seats text-[#03071280] px-9">E1</button>
+                  <button class="btn seats text-[#03071280] px-9">E2</button>
+                </div>
+                <div class="flex gap-5 items-center">
+                  <button class="btn seats text-[#03071280] px-9">E3</button>
+                  <button class="btn seats text-[#03071280] px-9">E4</button>
+                </div>
+              </div>
+              <!-- row-7 -->
+              <div class="flex justify-between font-inter font-medium text-lg">
+                <div class="flex gap-5 items-center">
+                  <p class="text-[#03071280]">F</p>
+                  <button class="btn seats text-[#03071280] px-9">F1</button>
+                  <button class="btn seats text-[#03071280] px-9">F2</button>
+                </div>
+                <div class="flex gap-5 items-center">
+                  <button class="btn seats text-[#03071280] px-9">F3</button>
+                  <button class="btn seats text-[#03071280] px-9">F4</button>
+                </div>
+              </div>
+              <!-- row-8 -->
+              <div class="flex justify-between font-inter font-medium text-lg">
+                <div class="flex gap-5 items-center">
+                  <p class="text-[#03071280]">G</p>
+                  <button class="btn seats text-[#03071280] px-9">G1</button>
+                  <button class="btn seats text-[#03071280] px-9">G2</button>
+                </div>
+                <div class="flex gap-5 items-center">
+                  <button class="btn seats text-[#03071280] px-9">G3</button>
+                  <button class="btn seats text-[#03071280] px-9">G4</button>
+                </div>
+              </div>
+              <!-- row-9 -->
+              <div class="flex justify-between font-inter font-medium text-lg">
+                <div class="flex gap-5 items-center">
+                  <p class="text-[#03071280]">H</p>
+                  <button class="btn seats text-[#03071280] px-9">H1</button>
+                  <button class="btn seats text-[#03071280] px-9">H2</button>
+                </div>
+                <div class="flex gap-5 items-center">
+                  <button class="btn seats text-[#03071280] px-9">H3</button>
+                  <button class="btn seats text-[#03071280] px-9">H4</button>
+                </div>
+              </div>
+              <!-- row-10 -->
+              <div class="flex justify-between font-inter font-medium text-lg">
+                <div class="flex gap-5 items-center">
+                  <p class="text-[#03071280]">I</p>
+                  <button class="btn seats text-[#03071280] px-[38px]">
+                    I1
+                  </button>
+                  <button class="btn seats text-[#03071280] px-[38px]">
+                    I2
+                  </button>
+                </div>
+                <div class="flex gap-5 items-center">
+                  <button class="btn seats text-[#03071280] px-[38px]">
+                    I3
+                  </button>
+                  <button class="btn seats text-[#03071280] px-[38px]">
+                    I4
+                  </button>
+                </div>
+              </div>
+              <!-- row-11 -->
+              <div class="flex justify-between font-inter font-medium text-lg">
+                <div class="flex gap-5 items-center">
+                  <p class="text-[#03071280]">J</p>
+                  <button class="btn seats text-[#03071280] px-9">J1</button>
+                  <button class="btn seats text-[#03071280] px-9">J2</button>
+                </div>
+                <div class="flex gap-5 items-center">
+                  <button class="btn seats text-[#03071280] px-9">J3</button>
+                  <button class="btn seats text-[#03071280] px-9">J4</button>
+                </div>
+              </div>
             </div>
           </div>
+
+          <!-- ======================================================================================= -->
 
           <!-- input form -->
           <div
@@ -411,6 +544,7 @@
                     Passenger Name*
                   </label>
                   <input
+                    id="passenger-input-field"
                     type="text"
                     placeholder="Enter your name"
                     class="input input-bordered w-full"
@@ -425,6 +559,7 @@
                     Phone Number*
                   </label>
                   <input
+                    id="phone-input-field"
                     type="number"
                     placeholder="Enter your phone number"
                     class="input input-bordered w-full"
@@ -439,7 +574,7 @@
                     Email ID
                   </label>
                   <input
-                    type="text"
+                    type="email"
                     placeholder="Enter your email id"
                     class="input input-bordered w-full"
                   />
