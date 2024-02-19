@@ -137,3 +137,9 @@ nextButton.addEventListener("click", function () {
   hideElementById("ticket");
   showElementById("modal");
 });
+
+// continue button reloading
+const continueButton = document.getElementById("continue-button");
+continueButton.addEventListener("click", function () {
+  window.location.reload();
+});
