@@ -3,13 +3,16 @@ const seats = document.getElementsByClassName("seats");
 
 for (const seat of seats) {
   seat.addEventListener("click", function () {
+    // set seat background color
     seat.classList.add("bg-primary-color");
     seat.classList.add("text-white");
 
+    // increase seat count
     const currentSeatElement = document.getElementById("current-seats");
     const currentSeat = getTextElementValueById("current-seats");
     currentSeatElement.innerText = currentSeat + 1;
 
+    // decrease seat count
     const currentAvailableSeatsElement = document.getElementById(
       "current-available-seats"
     );
@@ -18,6 +21,7 @@ for (const seat of seats) {
 
     // =================================================================
 
+    // appending ticket details
     const seatContainer = document.getElementById("seat-container");
 
     const pContainer = document.createElement("div");
@@ -54,23 +58,78 @@ for (const seat of seats) {
     grandTotalElement.innerText = newGrandTotal;
 
     // =================================================================
+
+    // remove default disable attribute for 'next' button while click a seat
+    const nextButton = document.getElementById("next-button");
+    nextButton.removeAttribute("disabled");
   });
 }
+// end seat loop
 
+// =============================[COUPON]====================================
+
+// remove default disabled attribute for 'apply' button while user input
+const couponFieldElement = document.getElementById("coupon-field");
+couponFieldElement.addEventListener("keyup", function () {
+  const applyButton = document.getElementById("apply-button");
+  applyButton.removeAttribute("disabled");
+});
+
+// coupon validation
+const applyButton = document.getElementById("apply-button");
+applyButton.addEventListener("click", function () {
+  const couponFieldElement = document.getElementById("coupon-field");
+  const couponField = couponFieldElement.value;
+
+  if (couponField === "NEW15") {
+    // get total price value
+    const totalPriceElement = document.getElementById("total-price");
+    const totalPrice = getTextElementValueById("total-price");
+
+    // show discounted div and set discount price
+    const discountedPriceElement = document.getElementById("discounted-price");
+    const discountPrice = totalPrice * 0.15;
+    discountedPriceElement.innerText = discountPrice;
+    showElementById("discounted-div");
+
+    // get grand price value
+    const grandTotalElement = document.getElementById("grand-total");
+    const grandTotal = getTextElementValueById("grand-total");
+
+    // get final value of grand total after discount
+    grandTotalElement.innerText = totalPrice - discountPrice;
+
+    // hide coupon div after applying 'NEW15' coupon
+    // const couponElement = this.getElementsByClassName('coupon-div')
+    hideElementById("coupon-div");
+  } else if (couponField === "Couple 20") {
+    // get total price value
+    const totalPriceElement = document.getElementById("total-price");
+    const totalPrice = getTextElementValueById("total-price");
+
+    // show discounted div and set discount price
+    const discountedPriceElement = document.getElementById("discounted-price");
+    const discountPrice = totalPrice * 0.2;
+    discountedPriceElement.innerText = discountPrice;
+    showElementById("discounted-div");
+
+    // get grand price value
+    const grandTotalElement = document.getElementById("grand-total");
+    const grandTotal = getTextElementValueById("grand-total");
+
+    // get final value of grand total after discount
+    grandTotalElement.innerText = totalPrice - discountPrice;
+
+    // hide coupon div after applying 'Couple 20' coupon
+    // const couponElement = this.getElementsByClassName('coupon-div')
+    hideElementById("coupon-div");
+  } else {
+    alert("Invalid Coupon");
+  }
+});
 // =================================================================
-// const applyButton = document.getElementById("apply-button");
-// applyButton.addEventListener("click", function () {
-//   const couponFieldElement = document.getElementById("coupon-field");
-//   const couponField = couponFieldElement.value;
 
-//   if(couponField === 'NEW15'){
-
-//   }else{
-
-//   }
-// });
-// =================================================================
-
+// show modal by clicking next button
 const nextButton = document.getElementById("next-button");
 nextButton.addEventListener("click", function () {
   hideElementById("header-section");
